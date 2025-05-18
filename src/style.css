@@ -1,0 +1,78 @@
+*{
+    background-color: black;
+}
+
+/* Front Page */
+.front-page-container {
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.title {
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: red;
+    color: #F04E45;
+    font-size: 100px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    flex:auto;
+    margin-top: 20%;
+}
+
+
+.logo {
+    width: 400px;
+    height:auto;
+    margin-bottom: 42px;
+  
+ 
+}
+.title-row {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* space between MOVIE and FINDER */
+}
+
+/* Search Bar */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 16px;
+    padding: 8px 16px;
+    width: 500px;
+    max-width: 90%;
+    margin: 32px auto 0 auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.search-icon {
+    color: #ffffff;
+    background-color:white;
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    font-size: 22px;
+    flex: 1;
+    background: transparent;
+    color: #222;
+    padding: 8px 0;
+}
+
+.clear-btn {
+    background: none;
+    border: none;
+    color: #222;
+    font-size: 24px;
+    margin-left: 8px;
+    cursor: pointer;
+    padding: 0 4px;
+}

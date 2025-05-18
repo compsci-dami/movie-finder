@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # My React App
 
 This is a TypeScript React application that serves as a template for building modern web applications. 
@@ -57,3 +58,6 @@ If you would like to contribute to this project, please fork the repository and 
 ## License
 
 This project is licensed under the MIT License.
+=======
+# movie-finder
+>>>>>>> da5f9ed6230baef79b3c6c9b6a37fc3c10bda544
