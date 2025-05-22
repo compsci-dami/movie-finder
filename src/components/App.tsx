@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FrontPage from './FrontPage';
-import SearchBar from './SearchBar';
+import MovieResults from './MovieResults';
 
-const App: React.FC = () => {
-    
-
-    return (
-        <div>
-            <FrontPage title="MOVIE" subtitle='Finder'/>
-            
-        </div>
-    );
-};
+const App: React.FC = () => (
+    <Router>
+        <Routes>
+            <Route path="/" element={<FrontPage title="MOVIE" subtitle="Finder" />} />
+            <Route path="/results/:query" element={<MovieResults />} />
+        </Routes>
+    </Router>
+);
 
 export default App;

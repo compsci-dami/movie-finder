@@ -76,3 +76,123 @@
     cursor: pointer;
     padding: 0 4px;
 }
+
+/* Movie Results  */
+
+/* Title */
+
+.title-query {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 32px 0 16px 0;
+    text-align: center;
+}
+
+.movie-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: flex-start;
+    background: #232323;
+    padding: 40px 32px;
+    font-weight: 8;
+    gap:72px;
+ 
+}
+
+.movie-card {
+    background: #2d2d2d;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+    margin: 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+   
+}
+.movie-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    background: #444;
+}
+
+.movie-title {
+    color: #fff;
+    font-weight: 10;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 16px 16px 8px 16px;
+    min-height: 48px;
+    background: #2d2d2d
+}
+
+.movie-year {
+    color: #fff;
+    font-size: 1rem;
+    margin: 0 16px 16px 16px;
+}
+
+.movie-card-footer {
+    background: #e9472d;
+    color: #232323;
+    width: 100%;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 1rem;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.rating {
+    color:white;
+    background: #e9472d;
+}
+.movie-year {
+     background: #e9472d;
+     margin: 0 24px 16px 16px;
+     
+}
+.movie-info {
+    color: white;
+    background: #e9472d;
+    margin-right: 8px;
+    display: flex;
+    gap: 64px;
+}
+    
+/* Movie Plot  */
+.movie-plot-tooltip {
+    display: none;
+    position: absolute;
+    font-weight: 8;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 125px; 
+    background: rgba(20, 20, 20, 0.97);
+    color: #fff;
+    padding: 16px;
+    border-radius: 8px 8px 0 0;
+    z-index: 10;
+    font-size: 1rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    pointer-events: none;
+    overflow-y: auto;
+}
+
+.movie-card:hover .movie-plot-tooltip {
+    display: block;
+}
