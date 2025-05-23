@@ -2,10 +2,19 @@ import React from "react";
 
 interface SearchBarProps {
     className?: string;
+    value: string;
+    onChange: (value: string) => void;  
+    onSubmit: (event: React.FormEvent) => void;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ className }) => {
-    const [query, setQuery] = React.useState("");
+const SearchBar: React.FC<SearchBarProps> = ({ className, value, onChange, onSubmit }) => {
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement> )=> {
+        if (e.key === "Enter") {
+            // e.preventDefault();
+            onSubmit(e);
+        }
+    };
+    
 
     return (
         <div className={`search-bar ${className || ""}`}>
@@ -13,14 +22,15 @@ const SearchBar: React.FC<SearchBarProps> = ({ className }) => {
             <input
                 type="text"
                 placeholder="Search for a movie..."
-                value={query}
-                onChange={e => setQuery(e.target.value)}
+                value={value}
+                onChange={e => onChange(e.target.value)}
+                onKeyDown={handleKeyDown}
                 className="search-input"
             />
-            {query && (
+            {value && (
                 <button
                     className="clear-btn"
-                    onClick={() => setQuery("")}
+                    onClick={() => onChange("")}
                     aria-label="Clear search"
                     type="button"
                 >

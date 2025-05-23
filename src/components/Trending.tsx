@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import SearchBar from "./SearchBar"; // ✅ Make sure this is correctly imported
+import { useNavigate } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 interface Movie {
   id: number;
@@ -13,6 +14,8 @@ interface Movie {
 const Trending: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchTrending = async () => {
@@ -33,16 +36,27 @@ const Trending: React.FC = () => {
     fetchTrending();
   }, []);
 
+  const handleSearch = () => {
+    if (search.trim()) {
+      navigate(`/results/${encodeURIComponent(search.trim())}`);
+    }
+  };
+
   return (
     <> 
-    <div className="front-page">
+      <div className="front-page">
         <img src='img/logo.png' alt='Logo' className='logo' />
-    </div>
+      </div>
       <div className="results-header">
         <h2 className="title-query" style={{ color: "white" }}>
           Trending Now...
         </h2>
-        <SearchBar className="search-results" />
+        <SearchBar
+          className="search-results"
+          value={search}
+          onChange={setSearch}
+          onSubmit={handleSearch}
+        />
       </div>
 
       {loading ? (

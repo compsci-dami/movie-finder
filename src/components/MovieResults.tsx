@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 
 interface Movie {
@@ -13,8 +13,10 @@ interface Movie {
 
 const MovieResults: React.FC = () => {
     const { query } = useParams<{ query: string }>();
+    const [search, setSearch] = useState(query || "");
     const [movies, setMovies] = useState<Movie[]>([]);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (!query) return;
@@ -55,23 +57,30 @@ const MovieResults: React.FC = () => {
         fetchMovies();
     }, [query]);
 
+    const handleSearch = () => {
+        if (search.trim()) {
+            navigate(`/results/${encodeURIComponent(search.trim())}`);
+        }
+    };
+
     return (
         <>
             <div className="results-header">
                 <h2 className="title-query" style={{ color: "white" }}>
                     Results for {query}
                 </h2>
-              
-                <SearchBar className="search-results" />
+                <SearchBar
+                    className="search-results"
+                    value={search}
+                    onChange={setSearch}
+                    onSubmit={handleSearch}
+                />
             </div>
-            
 
             {loading ? (
                 <p className="loading-text">Loading...</p>
             ) : (
-                
                 <div className="movie-results">
-                    
                     {movies.length === 0 ? (
                         <p className="no-results">No results found</p>
                     ) : (
