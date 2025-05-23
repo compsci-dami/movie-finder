@@ -45,12 +45,7 @@ body{
 /* front page and trending */
 
 .front-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 32px;
-    font-weight: 8;
+    margin-top:0px;
 
 }
 
@@ -192,6 +187,7 @@ body{
 .rating {
     color:white;
     background: #e9472d;
+    
 }
 .movie-year {
      background: #e9472d;

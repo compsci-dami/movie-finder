@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import Spline from '@splinetool/react-spline';
+
 
 interface Movie {
   id: number;
@@ -44,8 +46,9 @@ const Trending: React.FC = () => {
 
   return (
     <> 
+    
       <div className="front-page">
-        <img src='img/logo.png' alt='Logo' className='logo' />
+        <Spline scene="https://prod.spline.design/PTg9sP62hrgWFH4y/scene.splinecode" />
       </div>
       <div className="results-header">
         <h2 className="title-query" style={{ color: "white" }}>
