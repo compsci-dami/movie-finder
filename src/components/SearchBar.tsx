@@ -1,11 +1,14 @@
 import React from "react";
 
+interface SearchBarProps {
+    className?: string;
+}
 
-const SearchBar: React.FC = () => {
+const SearchBar: React.FC<SearchBarProps> = ({ className }) => {
     const [query, setQuery] = React.useState("");
 
     return (
-        <div className="search-bar">
+        <div className={`search-bar ${className || ""}`}>
             <span className="search-icon">🔍</span>
             <input
                 type="text"
