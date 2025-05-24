@@ -6,48 +6,9 @@ body{
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 
 }
-/* Front Page */
-.front-page-container {
-    min-height: 100vh;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.title {
-    font-family: 'Montserrat', Arial, sans-serif;
-    color: red;
-    color: #F04E45;
-    font-size: 100px;
-    font-weight: 800;
-    letter-spacing: 4px;
-    flex:auto;
-    margin-top: 20%;
-}
-
-
-.logo {
-    width: 400px;
-    height:auto;
-    margin-bottom: 42px;
-  
- 
-}
-.title-row {
-    display: flex;
-    align-items: center;
-    gap: 16px; /* space between MOVIE and FINDER */
-}
 
 /* Search Bar */
 
-/* front page and trending */
-
-.front-page {
-    margin-top:0px;
-
-}
 
 .search-bar {
     display: flex;
@@ -224,4 +185,59 @@ body{
 
 .movie-card:hover .movie-plot-tooltip {
     display: block;
+}
+
+
+/* Responsive adjustments */
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .movie-results {
+    gap: 32px;
+    padding: 24px 8px;
+  }
+  .movie-card {
+    width: 45vw;
+    min-width: 180px;
+    max-width: 300px;
+    margin-left: 0;
+  }
+  .search-bar {
+    width: 90vw;
+    min-width: 180px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .results-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin: 0 8px;
+  }
+  .movie-results {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 0;
+  }
+  .movie-card {
+    width: 95vw;
+    min-width: 140px;
+    max-width: 350px;
+    margin-left: 0;
+  }
+  .search-bar {
+    width: 68vw;
+    min-width: 120px;
+    max-width: 60%;
+    margin: 26px auto 0 auto;
+    margin-bottom: 30px;
+  }
+  .title-query {
+    margin-left: 0;
+    text-align: center;
+    font-size: 1.2rem;
+  }
 }
