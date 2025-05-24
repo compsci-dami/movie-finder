@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 
+
+
 interface Movie {
     imdbID: string;
     Title: string;

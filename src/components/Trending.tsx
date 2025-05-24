@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
-import Spline from '@splinetool/react-spline';
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 interface Movie {
@@ -47,9 +47,6 @@ const Trending: React.FC = () => {
   return (
     <> 
     
-      <div className="front-page">
-        <Spline scene="https://prod.spline.design/PTg9sP62hrgWFH4y/scene.splinecode" />
-      </div>
       <div className="results-header">
         <h2 className="title-query" style={{ color: "white" }}>
           Trending Now...
@@ -60,10 +57,13 @@ const Trending: React.FC = () => {
           onChange={setSearch}
           onSubmit={handleSearch}
         />
+        
       </div>
 
       {loading ? (
-        <p>Loading...</p>
+        <div style={{ display: "flex", justifyContent: "center", marginTop: 40 }}>
+            <ClipLoader color="red" size={100} />
+        </div>
       ) : (
         <div className="movie-results">
           {movies.map((movie) => (
